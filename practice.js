@@ -4,7 +4,12 @@
 //Create an object called me. Give it a key of name with the value being your name, and another key of age with the value being your age. Then alert your name using dot notation.
 
   //Code here
+var me = {
+    name: "Kyle",
+    age: "24"
+};
 
+alert(me.age);
 
 
 
@@ -16,17 +21,28 @@
 //Make a 'favoriteThings' object that contains the following keys: band, food, person, book, movie, holiday. Have the values to those keys be your favorite thing in that category.
 
   //Code here
+var favoriteThings = {
+    band: "Avenged Sevenfold",
+    food: "Navajo Tacos",
+    person: "Dad",
+    book: "Time Power",
+    movie: "LOTR trilogy",
+    holiday: "Christmas"
+};
 
 
 //After you've made your object, add another key named 'car' with the value being your favorite car and then another key named 'brand' with the value being your favorite brand.
 
   //Code here
+favoriteThings.car = "Camaro";
+favoriteThings.brand = "Urban Pipeline";
 
 
 //Now change the food key in your favoriteThings object to be 'Lettuce' and change the book key in your favoriteThings object to be '50 Shades of Gray'.
 
   //Code here
-
+favoriteThings.food = 'Lettuce';
+favoriteThings.book = '50 Shades of Gray;
 
 
 
@@ -43,17 +59,21 @@ Using dot notation, add another key (or property) to your backPack object
 that is named color, with the value being the color of your backpack. */
 
   //Code here
+var backPack = {};
+var item = 'firstPocket';
+backPack[item] = 'chapstick';
+backPack.color = 'red';
 
 //After you do the above, alert your entire backPack object.
 
   //Code here
-
+alert(backPack);
 /*You probably noticed that it just alerted [object Object].
 Alerting to see the data in your Object doesn't work so well.
 Instead, console.log your whole backPack object and then check out the console. */
 
   //Code here
-
+console.log(backPack);
 
 
 
@@ -65,11 +85,21 @@ Instead, console.log your whole backPack object and then check out the console. 
 //Create another 'me' object with the following properties name, age, height, gender, married, eyeColor, hairColor. Fill those properties in with the appropriate values.
 
   //Code Here
-
+var me = {
+  name: "Kyle",
+  age: 24,
+  height: '6\'2"',
+  gender: "Male",
+  married: "No",
+  eyeColor: "Green",
+  hairColor: "Brown"
+};
 //Now, loop through your object and alert every value. *Tyler --> 24 --> 6'0 --> Male, etc etc
 
   //Code Here
-
+for (var prop in me) {
+  alert(me[prop]);
+}
 
 
 
@@ -81,11 +111,19 @@ Instead, console.log your whole backPack object and then check out the console. 
 //Create an Object called 'album' with 5 keys named different song titles that you make up, with the values being the length of each song.
 
   //Code Here
-
+var album = {
+  "Codeine All Day": 74,
+  "Protein": 100,
+  "Pro Castinators": 121,
+  "The Skill of the Climber": 221,
+  "True Love's First Hug": 183
+};
 //Now, loop through your album object alerting every song title individually.
 
   //Code Here
-
+for (var prop in album) {
+  alert(prop);
+}
 
 
 
@@ -97,11 +135,21 @@ Instead, console.log your whole backPack object and then check out the console. 
 //Create an object called states that has 5 US states as properties with the values being their population (doesn't have to be accurate).
 
   //Code Here
-
+var states = {
+  Connecticut: 3000000,
+  Utah: 5000000,
+  California: 50000000,
+  Wyoming: 2,
+  Nebraska: 1
+};
 //Now, loop through your states object and if the states population is greater than 30K, alert that state.
 
   //Code Here
-
+for (var prop in states) {
+  if (states[prop] > 30000) {
+    alert(prop);
+  }
+}
 
 
 
@@ -117,16 +165,22 @@ var user = {
     birthday: undefined,
     username: 'tylermcginnis33',
     age: 0
-}
+};
 /*Above you're given a user object. Loop through the user object checking to make sure
 that each value is truthy. If it's not truthy, remove it from the object. */
 
   //Code Here
-
+for (var prop in user) {
+  if (!user[prop]) {
+    delete user[prop];
+  }
+}
 //Once you get your truthy Object, Change the remaining values in the object to be specific to you (name: 'your name', username: 'your username'), rather than my information.
 
   //Code Here
-
+user.name = "Kyle Lauritzen";
+user.pwHash = "cdYlo5";
+user.username = "kbl212";
 
 
 
