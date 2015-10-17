@@ -204,11 +204,12 @@ var user = {
 // name -> 'Tyler S. McGinnis', email -> 'tyler.mcginnis@devmounta.in'. Make that change.
 
   //Code Here
-
+user.name = "Tyler S. McGinnis";
+user.email = "tyler.mcginnis@devmounta.in";
 //Now call the sayName method that's on the user object which will alert the users email
 
   //Code Here
-
+user.sayName();
 
 
 
@@ -220,17 +221,24 @@ var user = {
 //Create an empty object called methodCollection.
 
   //Code Here
-
+var methodCollection = {};
 /*Now add two methods (functions that are properties on objects) to your methodCollection
 object. One called 'alertHello' which alerts 'hello' and another method called logHello
  which logs 'hello' to the console. */
 
   //Code Here
-
+var methodCollection = {};
+methodCollection.alertHello = function(){
+  alert('hello');
+};
+methodCollection.logHello = function() {
+  console.log('hello');
+};
 //Now call your alertHello and logHello methods.
 
   //Code Here
-
+methodCollection.alertHello();
+methodCollection.logHello();
 
 
 //NEXT PROBLEM
@@ -240,6 +248,13 @@ object. One called 'alertHello' which alerts 'hello' and another method called l
 // Create a function called MakePerson which takes in name, birthday, ssn as its parameters and returns a new object with all of the information that you passed in.
 
   //Code Here
+var MakePerson = function(name, birthday, ssn) {
+  var fullPerson = {};
+    fullPerson.name = name;
+    fullPerson.birthday = birthday;
+    fullPerson.ssn = ssn;
+  return fullPerson;
+};
 
 
 
@@ -250,7 +265,15 @@ object. One called 'alertHello' which alerts 'hello' and another method called l
 // Create a function called MakeCard which takes in all the data it needs to make a Credit Card object and returns that object so that whenever you invoke MakeCard, you get a brand new credit card.
 
   //Code Here
-  
+var MakeCard = function(nameOnCard, cardNum, secCode, expDate, PIN) {
+  var fullCard = {};
+    fullCard.nameOnCard = nameOnCard;
+    fullCard.cardNum = cardNum;
+    fullCard.secCode = secCode;
+    fullCard.expDate = expDate;
+    fullCard.PIN = PIN;
+  return fullCard;
+};
   
   
 //NEXT PROBLEM
@@ -263,5 +286,24 @@ object. One called 'alertHello' which alerts 'hello' and another method called l
 */
 
   //Code Here
+var bindCard = function(person, creditcard) {
+  var fullBind = {};
+    for (var prop1 in person) {
+        fullBind[prop1] = person[prop1];
+    }
+    for (var prop2 in creditcard) {
+        fullBind[prop2] = creditcard[prop2];
+    }
+  return fullBind;
+};
 
+/*include the following code in order to see an example:
+---------------------------------------------------------
+var person1 = MakePerson("Kyle", "December 1 1990", "123-45-6789");
 
+var card1 = MakeCard("Kyle B Lauritzen", "1234 4321 5678 8765", "12/15", 4592);
+
+var kyle = bindCard(person1, card1);
+console.log(kyle);
+---------------------------------------------------------
+*/
